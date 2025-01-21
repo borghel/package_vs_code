@@ -1,0 +1,14 @@
+# Environnements virtuels
+venv/
+.env/
+
+# Fichiers de configuration spécifiques à l'IDE
+.vscode/
+*.code-workspace
+
+# Fichiers compilés Python
+__pycache__/
+*.py[cod]
+
+# Journaux
+*.log
