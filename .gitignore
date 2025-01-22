@@ -12,15 +12,3 @@ __pycache__/
 
 # Journaux
 *.log
-
-# Ignore coverage report
-.coverage
-
-# Ignore dist folder
-dist/
-
-# Ignore poetry.lock
-poetry.lock
-
-# Ignore les dossiers de distribution
-dist/
