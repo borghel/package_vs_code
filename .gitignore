@@ -24,4 +24,3 @@ poetry.lock
 
 # Ignore les dossiers de distribution
 dist/
-build/
