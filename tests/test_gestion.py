@@ -1,5 +1,4 @@
 import pytest
-import os
 from gestion_utilisateurs.gestion import GestionUtilisateurs
 from gestion_utilisateurs.exceptions import UtilisateurExistantError, UtilisateurNonTrouveError
 
@@ -32,3 +31,24 @@ def test_supprimer_utilisateur(gestion):
 def test_supprimer_utilisateur_inexistant(gestion):
     with pytest.raises(UtilisateurNonTrouveError):
         gestion.supprimer_utilisateur("nonexistent@example.com")
+
+
+def test_rechercher_utilisateur_par_nom(gestion):
+    gestion.ajouter_utilisateur("Alice", "alice@example.com")
+    gestion.ajouter_utilisateur("Bob", "bob@example.com")
+    result = gestion.rechercher_utilisateur("nom", "Alice")
+    assert len(result) == 1
+    assert result[0]["email"] == "alice@example.com"
+
+
+def test_rechercher_utilisateur_par_email(gestion):
+    gestion.ajouter_utilisateur("Alice", "alice@example.com")
+    result = gestion.rechercher_utilisateur("email", "alice@example.com")
+    assert len(result) == 1
+    assert result[0]["nom"] == "Alice"
+
+
+def test_rechercher_utilisateur_critere_invalide(gestion):
+    gestion.ajouter_utilisateur("Alice", "alice@example.com")
+    with pytest.raises(ValueError):
+        gestion.rechercher_utilisateur("age", "25")

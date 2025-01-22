@@ -32,3 +32,15 @@ class GestionUtilisateurs:
     def afficher_utilisateurs(self):
         """Affiche tous les utilisateurs."""
         return self.utilisateurs
+
+    def rechercher_utilisateur(self, critere, valeur):
+        """
+        Recherche un utilisateur par un critère donné (nom ou email).
+        :param critere: Champ de recherche (nom ou email)
+        :param valeur: Valeur à chercher
+        :return: Liste d'utilisateurs correspondant au critère
+        """
+        if critere not in ['nom', 'email']:
+            raise ValueError("Critère invalide. Utilisez 'nom' ou 'email'.")
+        
+        return [u for u in self.utilisateurs if u.get(critere) == valeur]
