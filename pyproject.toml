@@ -1,0 +1,14 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gestion_utilisateurs"
+version = "1.0.0"
+description = "Une gestion robuste des utilisateurs avec Python"
+authors = [{name = "Votre Nom", email = "votre.email@example.com"}]
+dependencies = []
+requires-python = ">=3.8"  # Cela doit être ici, pas dans `tool.setuptools.dynamic`
+
+[project.optional-dependencies]
+dev = ["pytest", "sphinx"]
