@@ -18,3 +18,16 @@ print(resultat_nom)  # [{'nom': 'Alice', 'email': 'alice@example.com'}]
 # Rechercher par email
 resultat_email = gestion.rechercher_utilisateur("email", "bob@example.com")
 print(resultat_email)  # [{'nom': 'Bob', 'email': 'bob@example.com'}]
+# Gestion des Utilisateurs
+
+Ce projet permet de gérer une liste d'utilisateurs avec les fonctionnalités suivantes :
+- Ajouter un utilisateur
+- Supprimer un utilisateur
+- Afficher tous les utilisateurs
+- Rechercher un utilisateur par nom ou email
+- Mettre à jour le nom d'un utilisateur
+
+## Installation
+
+```sh
+pip install -r requirements.txt
